@@ -51,7 +51,7 @@ class SendEmailController extends Controller
             //  'saving_fund' => 'required',
             //  'debt' => 'required',
             //  'inlineRadioOptions1' => 'required',
-            //  'inlineRadioOptions2' => 'required',
+              'inlineRadioOptions2' => 'required',
          ]);
 
         $data = array(
