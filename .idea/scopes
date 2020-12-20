@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DependencyValidationManager">
+    <scope name="vendor" pattern="file:vendor//*" />
+    <scope name="node modules" pattern="!file:*/node_modules//*" />
+  </component>
+</project>
