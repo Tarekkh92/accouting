@@ -24,7 +24,7 @@
     <p> 
         وضعك الاجتماعي:    
 
-        <span color="green">{{ $data['وضع'] }}</span>
+        <span color="green">{{ $data['state'] }}</span>
     </p>
     <p> 
        لديك ولاد:  

@@ -172,18 +172,18 @@
             <label class="heading col-12 "> اختار وضعك الاجتماعي </label>
             <br/>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="وضع" value="متزوج">
+                <input class="form-check-input" type="radio" name="state" value="متزوج">
                 <label class="form-check-label" for="inlineRadio1">متزوج</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="وضع" value="مطلق">
+                <input class="form-check-input" type="radio" name="state" value="مطلق">
                 <label class="form-check-label" for="inlineRadio2">مطلق</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name='وضع' value="ارمل">
+                <input class="form-check-input" type="radio" name='state' value="ارمل">
                 <label class="form-check-label" for="inlineRadio2">ارمل</label>
             </div>
-            @error('وضع')
+            @error('state')
             <div class="alert alert-danger mt-1 mb-1">
                 اختار وضعك الاجتماعي
             </div>

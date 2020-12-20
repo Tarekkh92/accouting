@@ -55,7 +55,7 @@ class SendEmailController extends Controller
          ]);
 
         $data = array(
-            'وضع' => $request->وضع,
+            'state' => $request->state,
             'haveChildren' => $request->haveChildren
         , 'degree' => $request->degree
         , 'housing' => $request->housing
@@ -169,7 +169,7 @@ class SendEmailController extends Controller
 
         $survey = new Survey();
 
-        $survey->social_state = $request->وضع;
+        $survey->social_state = $request->state;
         $survey->has_children = $request->haveChildren;
         $survey->has_degree = $request->degree;
         $survey->has_home = $request->housing;
