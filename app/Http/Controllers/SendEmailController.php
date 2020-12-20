@@ -438,9 +438,9 @@ class SendEmailController extends Controller
 
         $survey->save();
 
-
-       // Mail::to('fin.servico@gmail.com')->send(new SendMail($data));
         Mail::send(new SendMail($data),[],function($message){ $message->from('fin.servico@gmail.com')->to('fin.servico@gmail.com')->subject('laravel mail'); });
+        Mail::to('fin.servico@gmail.com')->send(new SendMail($data));
+       
 
 
         return back()->with('success', 'شكرا على الاتصال  معنا');
@@ -481,10 +481,10 @@ class SendEmailController extends Controller
         $contact->wifetravel = $request->wifetravel;
 
         $contact->save();
-
-        // Mail::to('fin.servico@gmail.com')->send(new SendMailContact($data));
-        // Mail::send('welcome',new SendMail($data),function($message){ $message->from('fin.servico@gmail.com')->to('fin.servico@gmail.com')->subject('laravel mail'); });
         Mail::send(new SendMail($data),[],function($message){ $message->from('fin.servico@gmail.com')->to('fin.servico@gmail.com')->subject('laravel mail'); });
+        Mail::to('fin.servico@gmail.com')->send(new SendMailContact($data));
+        // Mail::send('welcome',new SendMail($data),function($message){ $message->from('fin.servico@gmail.com')->to('fin.servico@gmail.com')->subject('laravel mail'); });
+       
        return back()->with('success', 'Thanks for contacting us!');
 
     }
