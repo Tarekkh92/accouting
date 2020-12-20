@@ -27,33 +27,32 @@ class SendEmailController extends Controller
 
     function send(Request $request)
     {
-
-        $this->validate($request, [
-            // 'وضع' => 'required',
-            // 'haveChildren' => 'required',
-            // 'degree' => 'required',
-            // 'housing' => 'required',
-            // 'gender' => 'required',
-            // 'dob' => 'required',
-            // 'marriageDate' => 'required',
-            // 'devorceDate' => 'required',
-            // 'pay' => 'required',
-            // 'مبارعه' => 'required',
-            // 'تامين' => 'required',
-            // 'مصلحة' => 'required',
-            // 'عاجز' => 'required',
-            // 'ضريبة' => 'required',
-            // 'تقرير' => 'required',
-            // 'gotPay' => 'required',
-            // 'salaryRange' => 'required',
-            // 'own' => 'required',
-            // 'withdraw' => 'required',
-            // 'saving_fund' => 'required',
-            // 'debt' => 'required',
-            // 'inlineRadioOptions1' => 'required',
-            // 'inlineRadioOptions2' => 'required',
-        ]);
-
+//
+         $this->validate($request, [
+             'وضع' => 'required',
+             'haveChildren' => 'required',
+             'degree' => 'required',
+             'housing' => 'required',
+             'gender' => 'required',
+             'dob' => 'required',
+             'marriageDate' => 'required',
+             'devorceDate' => 'required',
+             'pay' => 'required',
+             'مبارعه' => 'required',
+             'تامين' => 'required',
+             'مصلحة' => 'required',
+             'عاجز' => 'required',
+             'ضريبة' => 'required',
+             'تقرير' => 'required',
+             'gotPay' => 'required',
+             'salaryRange' => 'required',
+             'own' => 'required',
+             'withdraw' => 'required',
+             'saving_fund' => 'required',
+             'debt' => 'required',
+             'inlineRadioOptions1' => 'required',
+             'inlineRadioOptions2' => 'required',
+         ]);
 
         $data = array(
             'وضع' => $request->وضع,
@@ -192,6 +191,7 @@ class SendEmailController extends Controller
         $survey->saving_fund = $request->saving_fund;
         $survey->debts = $request->debt;
         $survey->bank_mortgage = $request->inlineRadioOptions1;
+//        $survey->refund = $request->refund;
 
         $survey->save();
         $survey->refresh();
@@ -438,7 +438,9 @@ class SendEmailController extends Controller
 
         $survey->save();
 
+
         Mail::to('fin.servico@gmail.com')->send(new SendMail($data));
+
         return back()->with('success', 'شكرا على الاتصال  معنا');
 
     }
@@ -479,7 +481,7 @@ class SendEmailController extends Controller
         $contact->save();
 
         Mail::to('fin.servico@gmail.com')->send(new SendMailContact($data));
-        return back()->with('success', 'Thanks for contacting us!');
+       return back()->with('success', 'Thanks for contacting us!');
 
     }
 }
