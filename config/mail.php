@@ -85,7 +85,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'app195239739@heroku.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
