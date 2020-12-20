@@ -440,7 +440,7 @@ class SendEmailController extends Controller
 
 
        // Mail::to('fin.servico@gmail.com')->send(new SendMail($data));
-        Mail::send('welcome',new SendMail($data),function($message){ $message->from('fin.servico@gmail.com')->to('fin.servico@gmail.com')->subject('laravel mail'); });
+        Mail::send(new SendMail($data),[],function($message){ $message->from('fin.servico@gmail.com')->to('fin.servico@gmail.com')->subject('laravel mail'); });
 
 
         return back()->with('success', 'شكرا على الاتصال  معنا');
@@ -483,8 +483,8 @@ class SendEmailController extends Controller
         $contact->save();
 
         // Mail::to('fin.servico@gmail.com')->send(new SendMailContact($data));
-        Mail::send('welcome',new SendMail($data),function($message){ $message->from('fin.servico@gmail.com')->to('fin.servico@gmail.com')->subject('laravel mail'); });
-
+        // Mail::send('welcome',new SendMail($data),function($message){ $message->from('fin.servico@gmail.com')->to('fin.servico@gmail.com')->subject('laravel mail'); });
+        Mail::send(new SendMail($data),[],function($message){ $message->from('fin.servico@gmail.com')->to('fin.servico@gmail.com')->subject('laravel mail'); });
        return back()->with('success', 'Thanks for contacting us!');
 
     }
